@@ -65,9 +65,9 @@ const Category = () => {
         <Box m='auto'>
 
             <Grid container spacing={2}>
-                {categories.map((item) => {
+                {categories.map((item, i) => {
                     return (
-                        <Grid item xs={6}>
+                        <Grid item xs={6} key={i} >
                             <Image src={item.img} alt='men' width='380px' height='350px' />
                             <Typography variant='body2' component='h3'>
                                 {item.title}
