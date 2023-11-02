@@ -64,6 +64,8 @@ const Category = () => {
     return (
         <Box m='auto'>
 
+
+
             <Grid container spacing={2}>
                 {categories.map((item, i) => {
                     return (
