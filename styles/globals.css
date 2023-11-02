@@ -105,3 +105,10 @@ body {
 .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
   bottom: 65px !important;
 }
+
+.rightImage {
+  background: url("../public/images/s1.jpg") center center / cover no-repeat;
+  width: 100vw;
+  height: 100vh;
+  background-attachment: fixed;
+}

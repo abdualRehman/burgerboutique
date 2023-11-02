@@ -6,7 +6,7 @@ import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 
 // image
-import logoGeneral from '../public/images/logo.png';
+import logoGeneral from '../public/images/logo.jpg';
 import arrow_right from '../public/images/arrow_right.png';
 import person from '../public/images/person.png';
 import shopping_cart from '../public/images/shopping_cart.png';
@@ -32,48 +32,11 @@ import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import ContactSupportIcon from '@mui/icons-material/ContactSupport';
 import SearchIcon from '@mui/icons-material/Search';
 import { PRIMARY } from "../theme/palette";
+import Slider from "./Slider";
 
-
-const Search = styled('div')(({ theme }) => ({
-    position: 'relative',
-    borderRadius: "20px",
-    display: "flex",
-    alignItems: "center",
-    border: "1px solid",
-    borderColor: "#0A6BF8",
-    // backgroundColor: alpha(theme.palette.common.white, 0.15),
-    // backgroundColor: alpha(theme.palette.common.black, 0.15),
-    // '&:hover': {
-    //     backgroundColor: alpha(theme.palette.common.black, 0.25),
-    // },
-    marginRight: theme.spacing(2),
-    marginLeft: 0,
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-        marginLeft: theme.spacing(3),
-        width: 'auto',
-    },
-}));
-
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-    color: 'inherit',
-    '& .MuiInputBase-input': {
-        padding: theme.spacing(1, 3, 1, 3),
-        // vertical padding + font size from searchIcon
-        // paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-        transition: theme.transitions.create('width'),
-        width: '100%',
-        [theme.breakpoints.up('md')]: {
-            width: '20ch',
-        },
-    },
-    '& input': {
-        '&::placeholder': {
-            textOverflow: 'ellipsis !important',
-            opacity: 0.8
-        }
-    }
-}));
+import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
+import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
+import LanguageOutlinedIcon from '@mui/icons-material/LanguageOutlined';
 
 const Navbar = () => {
     const { mode, toggleMode } = useContext(ColorModeContext)
@@ -95,99 +58,62 @@ const Navbar = () => {
 
 
     return (
-        <Box maxWidth='1052px' m='auto' py={`${isTablet ? '5px' : '10px'}`} sx={{ flexGrow: 1 }}>
+        <Box maxWidth='1052px' m='auto' sx={{ flexGrow: 1 }}>
             <AppBar position="static" color="transparent" sx={{ boxShadow: 'none' }}>
                 <Paper variant="outlined"
                     sx={{
                         boxShadow: 'none', borderRadius: '0', border: 'none',
-                        display: 'flex', alignItems: 'center'
+                        display: 'flex', alignItems: 'center', px: 2
                     }}>
-                    {/* laptap menu */}
-                    {!isTablet &&
-                        <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center', gap: '10px', justifyContent: "space-between" }}>
-
-                            <Image src={logo} alt='logo_Image' width={200} height={40} />
-
-                            <Search>
-                                <StyledInputBase
-                                    className="input-search"
-                                    placeholder="Search…"
-                                    inputProps={{ 'aria-label': 'search' }}
-                                />
-
-                                <Box sx={{ marginRight: 1, display: 'flex' }} >
-                                    <Image src={arrow_right} alt='arrow_right' />
-                                </Box>
-                            </Search>
-                            <Box sx={{ gap: "10px" }} >
-                                <Link href='/cart'>
-                                    <IconButton size="large"
-                                        aria-label="account of current user"
-                                        aria-controls="menu-appbar"
-                                        aria-haspopup="true"
-                                        color="inherit"
-                                    >
-                                        <Image src={shopping_cart} alt='shopping_cart' width={"30px"} height={'30px'} />
-                                    </IconButton>
-                                </Link>
-                                <Link href='/profile'>
-                                    <IconButton size="large"
-                                        aria-label="account of current user"
-                                        aria-controls="menu-appbar"
-                                        aria-haspopup="true"
-                                        color="inherit"
-                                    >
-                                        <Image src={person} alt='person' width={"30px"} height={'30px'} />
-                                    </IconButton>
-                                </Link>
-                                <Link href='/'>
-                                    <Button variant="contained" sx={{ backgroundColor: PRIMARY.main, px: 4, fontWeight: 500, color: "#2F2F2F", borderRadius: 20, fontSize: 15 }} >
-                                        Register
-                                    </Button>
-                                </Link>
-                            </Box>
-                            {/* <Link href='/'>
-                                <Button variant="text">
-                                    Home
-                                </Button>
-                            </Link>
-
-                            <Link href='/products'>
-                                <Button variant="text">
-                                    Products
-                                </Button>
-                            </Link>
-
-                            <Link href='/aboutUs'>
-                                <Button variant="text">
-                                    About us
-                                </Button>
-                            </Link>
-
-                            <Link href='/contactUs'>
-                                <Button variant="text">
-                                    Contact Us
-                                </Button>
-                            </Link> */}
-
-                        </Box>
-                    }
 
                     {/* responsive menu */}
                     {isTablet &&
-                        <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center' }}>
-                            <IconButton
-                                size="large"
-                                edge="start"
-                                color="inherit"
-                                aria-label="menu"
-                                sx={{ mr: 2 }}
-                                onClick={() => setMenu(true)}
-                            >
-                                <MenuIcon sx={{ fontSize: '30px' }} />
-                            </IconButton>
+                        <Box sx={{ width: "100%", display: 'flex', alignItems: 'center', justifyContent: "space-between", px: 2 }}>
+                            <Box sx={{ width: "30%" }}>
+                                <IconButton
+                                    size="large"
+                                    edge="start"
+                                    color="inherit"
+                                    aria-label="menu"
+                                    onClick={() => setMenu(true)}
+                                >
+                                    <MenuIcon sx={{ fontSize: '30px' }} />
+                                </IconButton>
+                            </Box>
 
-                            <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center', justifyContent: state.config?.navLogoPosition || "center" }}> <Image src={logo} alt='logo_Image' width={50} height={40} /></Box>
+                            <Box sx={{ width: "100%", display: 'flex', alignItems: 'center', justifyContent: state.config?.navLogoPosition || "center" }}>
+                                <Image src={logo} alt='logo_Image' style={{ borderRadius: "10px" }} width={50} height={40} />
+                            </Box>
+
+                            <Box sx={{ width: "30%", display: 'flex', alignItems: 'flex-end', justifyContent: "flex-end", gap: "10px" }}>
+                                <IconButton
+                                    size="small"
+                                    edge="start"
+                                    color="inherit"
+                                    aria-label="menu"
+
+                                >
+                                    <LocalMallOutlinedIcon style={{ fontSize: "24px" }} />
+                                </IconButton>
+                                <IconButton
+                                    size="small"
+                                    edge="start"
+                                    color="inherit"
+                                    aria-label="menu"
+
+                                >
+                                    <SearchOutlinedIcon style={{ fontSize: "24px" }} />
+                                </IconButton>
+                                <IconButton
+                                    size="small"
+                                    edge="start"
+                                    color="inherit"
+                                    aria-label="menu"
+
+                                >
+                                    <LanguageOutlinedIcon style={{ fontSize: "24px" }} />
+                                </IconButton>
+                            </Box>
 
                             <Drawer
                                 anchor='left'
@@ -258,84 +184,9 @@ const Navbar = () => {
                             </Drawer>
                         </Box>
                     }
-
-                    {/* Light / Dark */}
-                    {/* <Tooltip title='Mode'>
-                        <IconButton onClick={toggleMode} color='primary'>
-                            {mode === 'light' ? <ModeNightIcon sx={{ fontSize: '25px' }} /> :
-                                <LightModeIcon sx={{ color: '#fca311', fontSize: '25px' }} />}
-                        </IconButton>
-                    </Tooltip> */}
-
-                    {/* Cart */}
-                    {/* <Link href='/cart'>
-                        <Tooltip title='cart'>
-                            <IconButton sx={{ px: '12px' }}>
-                                <Badge badgeContent={hasWindow && state.itemsCounter} color="error">
-                                    {state.config?.cart && <Box component='img' src={state.config?.cart} />}
-                                    {!(state.config?.cart) && <ShoppingBasketIcon color="primary" sx={{ fontSize: '25px' }} />}
-                                </Badge>
-                            </IconButton>
-                        </Tooltip>
-                    </Link> */}
-
-                    {/* Person Account */}
-                    {/* {!isTablet &&
-                        <Link href='/signUp'>
-                            <Tooltip title='Profile'>
-                                <IconButton
-                                    size="large"
-                                    aria-label="account of current user"
-                                    aria-controls="menu-appbar"
-                                    aria-haspopup="true"
-                                    color="inherit"
-                                >
-                                    <AccountCircleIcon sx={{ fontSize: '25px' }} />
-                                </IconButton>
-                            </Tooltip>
-                        </Link>
-                    } */}
-
-                </Paper>
-                <Paper variant="outlined"
-                    sx={{
-                        boxShadow: 'none', borderRadius: '0', border: 'none',
-                        display: 'flex', alignItems: 'center', justifyContent: "space-evenly",
-                        width: "80%", margin: "auto"
-                    }}>
-
-
-                    <Link href='/'>
-                        <Button color="inherit" variant="text">
-                            Home
-                        </Button>
-                    </Link>
-
-                    <Link href='/products'>
-                        <Button variant="inherit">
-                            Products
-                        </Button>
-                    </Link>
-                    <Link href='/products'>
-                        <Button variant="inherit">
-                            Accessories
-                        </Button>
-                    </Link>
-
-                    <Link href='/aboutUs'>
-                        <Button variant="inherit">
-                            About us
-                        </Button>
-                    </Link>
-
-                    <Link href='/contactUs'>
-                        <Button variant="inherit">
-                            Contact Us
-                        </Button>
-                    </Link>
-
                 </Paper>
             </AppBar>
+            {isTablet && <Slider />}
         </Box>
     );
 }

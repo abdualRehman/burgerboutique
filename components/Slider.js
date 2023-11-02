@@ -8,9 +8,9 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 // images
-import slideOne from '../public/images/slide1.png'
-import slideTwo from '../public/images/slide2.jpg'
-import slideThree from '../public/images/slider3.jpg'
+import slideOne from '../public/images/s1.jpg'
+import slideTwo from '../public/images/s2.jpg'
+import slideThree from '../public/images/s3.jpg'
 
 // mui
 import { Button, Typography, useMediaQuery } from '@mui/material';
@@ -24,18 +24,12 @@ const Slider = () => {
     const content = [
         {
             img: slideOne,
-            title: "men's clothing",
-            description: "don't compromise on style! get flat 30% off for new arrivals."
         },
         {
             img: slideTwo,
-            title: "women's clothing",
-            description: "don't compromise on style! get flat 30% off for new arrivals."
         },
         {
             img: slideThree,
-            title: "jewelery",
-            description: "don't compromise on style! get flat 30% off for new arrivals."
         },
     ]
 
@@ -60,30 +54,12 @@ const Slider = () => {
                         <Box sx={{
                             display: 'flex', alignItems: 'center',
                             flexDirection: `${isTablet ? 'column' : 'row'}`,
-                            justifyContent: 'center', gap: '50px', mb: '50px'
+                            justifyContent: 'center', gap: '50px', mb: '10px'
                         }}>
                             <Box>
                                 <Image src={item.img} alt='banner' height={'570px'} />
                             </Box>
 
-                            {/* <Box width={`${isTablet ? '90%' : '40%'}`}>
-
-                                <Typography variant={`${isTablet ? 'h5' : 'h4'}`} component='h1' fontWeight={600} mb='40px'>
-                                    {item.title.toLocaleUpperCase()}
-                                </Typography>
-
-                                <Typography variant='body1' component='h3' mb='40px' fontSize='14px'
-                                    sx={{ wordSpacing: '10px' }}>
-                                    {item.description.toLocaleUpperCase()}
-                                </Typography>
-
-                                <Link href='/products'>
-                                    <Button variant='outlined'>
-                                        Shop Now
-                                    </Button>
-                                </Link>
-
-                            </Box> */}
                         </Box>
 
                     </SwiperSlide>

@@ -8,9 +8,53 @@ import jewelery from '../public/jewelery.jpg'
 
 // mui
 import { Box } from '@mui/system'
-import { Button, Typography, useMediaQuery } from '@mui/material'
-import Link from 'next/link'
+import { Button, Grid, Typography, useMediaQuery } from '@mui/material'
+import Link from 'next/link';
 
+import p1 from '../public/images/p1.jpg'
+import p2 from '../public/images/p2.jpg'
+import p3 from '../public/images/p3.jpg'
+import p4 from '../public/images/p4.jpg'
+import p5 from '../public/images/p5.jpg'
+import p6 from '../public/images/p6.jpg'
+import p7 from '../public/images/p7.jpg'
+import p8 from '../public/images/p8.jpg'
+
+
+const categories = [
+    {
+        img: p1,
+        title: "Combo Meal"
+    },
+    {
+        img: p2,
+        title: "SALADS / APPETIZERS"
+    },
+    {
+        img: p3,
+        title: "BEEF BURGERS"
+    },
+    {
+        img: p4,
+        title: "CHICKEN BURGERS"
+    },
+    {
+        img: p5,
+        title: "SLIDERS"
+    },
+    {
+        img: p6,
+        title: "LEMONADES"
+    },
+    {
+        img: p7,
+        title: "SODAS & WATER"
+    },
+    {
+        img: p8,
+        title: "Extra Toppings"
+    },
+];
 
 const Category = () => {
 
@@ -18,10 +62,22 @@ const Category = () => {
 
 
     return (
-        <Box m='auto' display='flex'
-            flexDirection={`${isTablet ? 'column' : 'row'}`} justifyContent='center'>
+        <Box m='auto'>
 
-            <Box display='flex' flexDirection='column' alignItems='center' justifyContent='center' gap='20px' mb='20px'>
+            <Grid container spacing={2}>
+                {categories.map((item) => {
+                    return (
+                        <Grid item xs={6}>
+                            <Image src={item.img} alt='men' width='380px' height='350px' />
+                            <Typography variant='body2' component='h3'>
+                                {item.title}
+                            </Typography>
+                        </Grid>
+                    )
+                })}
+
+            </Grid>
+            {/* <Box display='flex' flexDirection='column' alignItems='center' justifyContent='center' gap='20px' mb='20px'>
                 <Box sx={{ position: 'relative' }}>
                     <Image src={men} alt='men' width='380px' height='500px' />
                     <Box sx={{
@@ -90,7 +146,7 @@ const Category = () => {
                         </Link>
                     </Box>
                 </Box>
-            </Box>
+            </Box> */}
 
         </Box>
     );
