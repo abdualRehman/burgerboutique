@@ -6,7 +6,8 @@ import Location from "../../components/select-branch/Location";
 
 import PickupStore from "../../components/select-branch/PickupStore";
 const branch = () => {
-  const [active, setActive] = useState("");
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const [active, setActive] = useState(2);
   const history = () => {
     Router.back();
   };

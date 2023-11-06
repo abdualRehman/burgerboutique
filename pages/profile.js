@@ -8,7 +8,7 @@ const profile = () => {
   };
   const menuItems = ["My Cart", "Menu", "My Orders"];
   return (
-    <div>
+    <div className="h-100" style={{height:'100vh'}} >
       <nav className="flex border-b bg-white border-gray-200 p-5">
         <div className="cursor-pointer" onClick={history}>
           <ArrowBackOutlinedIcon />

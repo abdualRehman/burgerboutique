@@ -77,13 +77,14 @@ export default function Home() {
           onClick={() => router.push("/select/branch")}
           variant="outlined"
           sx={{
-            "&:hover": {
-              bgcolor: "white",
-            },
             fontWeight: 400,
             borderColor: "#666666",
             color: "#666666",
             mx: 4,
+            "&:hover": {
+              bgcolor: "white",
+              borderColor: "#666666",
+            },
           }}
         >
           Delivery
@@ -94,6 +95,7 @@ export default function Home() {
           sx={{
             "&:hover": {
               bgcolor: "white",
+              borderColor: "#666666",
             },
             fontWeight: 400,
             borderColor: "#666666",

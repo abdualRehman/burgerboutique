@@ -7,8 +7,8 @@ const PickupStore = () => {
   return (
     <div className="mt-8">
       <h3 className="text-sm p-2 font-semibold">Choose a store</h3>
-      <div className="bg-white border-y border-gray-300 p-3">
-        <div className="w-full flex justify-between items-center">
+      <div className="bg-white border-y border-gray-300 p-3 pl-0">
+        <div className="w-full flex justify-between alitn-items-center items-center" style={{ borderLeft: "5px solid black" }} >
           <span className="font-semibold ml-2 border-b w-full pb-2 border-gray-300">
             Burger Boutique
           </span>

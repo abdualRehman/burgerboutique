@@ -91,6 +91,7 @@ function MyApp({ Component, pageProps }) {
                         paddingLeft: "10px",
                         paddingRight: "10px",
                         backgroundColor: "white",
+                        // top:"100%"
                       }}
                     >
                       <Button

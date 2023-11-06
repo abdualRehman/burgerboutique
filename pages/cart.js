@@ -63,7 +63,7 @@ const Cart = () => {
           title={"Special Remarks"}
         />
       </div>
-      <div>
+      <div className="px-2" >
         <h2 className="ml-3 font-semibold mt-7 mb-2">Items</h2>
         <CartItem />
         <CartItem />
