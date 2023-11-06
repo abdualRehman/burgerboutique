@@ -1,34 +1,35 @@
-import Head from 'next/head';
+import Head from "next/head";
 
 // HOC react
-import IframeHOC from '../components/IframeHOC';
+import IframeHOC from "../components/IframeHOC";
 
 // mui for backgraound
-import { Box, Button, Grid, IconButton, Paper } from '@mui/material';
+import { Box, Button, Grid, IconButton, Paper } from "@mui/material";
 
 // mui theme
-import { ColorContextProvider } from '../theme/MUI_MODE';
+import { ColorContextProvider } from "../theme/MUI_MODE";
 
 // components
-import Footer from '../components/Footer';
-import Navbar from '../components/Navbar';
-import ScrollToTop from '../components/ScrollToTop';
-import '../styles/globals.css';
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
+import ScrollToTop from "../components/ScrollToTop";
+import "../styles/globals.css";
 
 // redux
-import { Provider } from 'react-redux';
-import Store from '../redux/store';
+import { Provider } from "react-redux";
+import Store from "../redux/store";
 
 // progressbar
 import NextNProgress from "nextjs-progressbar";
 
-import MenuIcon from '@mui/icons-material/Menu';
-import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
-import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
-import LanguageOutlinedIcon from '@mui/icons-material/LanguageOutlined';
-
+import MenuIcon from "@mui/icons-material/Menu";
+import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
+import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
+import { useRouter } from "next/router";
 
 function MyApp({ Component, pageProps }) {
+  const router = useRouter();
   return (
     <>
       <Head>
@@ -39,8 +40,14 @@ function MyApp({ Component, pageProps }) {
       <Provider store={Store}>
         <IframeHOC>
           <ColorContextProvider>
-            <Paper variant='outlined'
-              sx={{ boxShadow: 'none', borderRadius: 0, border: 'none' }}>
+            <Paper
+              variant="outlined"
+              sx={{
+                boxShadow: "none",
+                borderRadius: 0,
+                border: "none",
+              }}
+            >
               <NextNProgress
                 color="#29D"
                 startPosition={0.3}
@@ -49,63 +56,118 @@ function MyApp({ Component, pageProps }) {
                 showOnShallow={true}
               />
 
-
-              <Grid container spacing={0} >
-                <Grid item xs={12} lg={5} sx={{
-                  height: '100vh',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  position: 'relative',
-                }} >
-
+              <Grid container spacing={0}>
+                <Grid
+                  item
+                  xs={12}
+                  lg={5}
+                  sx={{
+                    height: "100vh",
+                    display: "flex",
+                    flexDirection: "column",
+                    position: "relative",
+                  }}
+                >
                   <Paper
                     sx={{
-                      flex: '1',
-                      overflowY: 'auto',
+                      flex: "1",
+                      overflowY: "auto",
                       boxShadow: "none",
                       borderRadius: 0,
                       p: 0,
-                      '&::-webkit-scrollbar': {
-                        display: "none"
-                      }
+                      "&::-webkit-scrollbar": {
+                        display: "none",
+                      },
                     }}
                   >
-
-
                     <Navbar />
                     <Component {...pageProps} />
-                    <Box sx={{ position: 'sticky', bottom: 0, width: "95%", m: 1, }} >
-                      <Button variant="contained" sx={{ width: "100%", py: 1, fontWeight: 400, backgroundColor: "black", color: "white" }}  >Select Your Location</Button>
+                    <Box
+                      sx={{
+                        position: "sticky",
+                        bottom: 0,
+                        width: "100%",
+                        paddingY: "7px",
+                        paddingLeft: "10px",
+                        paddingRight: "10px",
+                        backgroundColor: "white",
+                      }}
+                    >
+                      <Button
+                        className="bg-black font-extralight"
+                        variant="contained"
+                        sx={{
+                          "&:hover": {
+                            bgcolor: "black",
+                          },
+                          fontWeight: 100,
+                          width: "100%",
+                          py: 1,
+                          fontWeight: 400,
+                          backgroundColor: "black",
+                          color: "white",
+                        }}
+                      >
+                        Select Your Location
+                      </Button>
                     </Box>
                   </Paper>
-
                 </Grid>
-                <Grid item xs={12} lg={7} className="rightImage" sx={{ display: { xs: "none", lg: "block" }, position: "fixed", top: 0, right: 0, height: "100vh" }} >
-
-                  <Box sx={{ position: "absolute", top: 10, left: 40, display: "flex", gap: "30px", px: 2, width: "100%" }} >
+                <Grid
+                  item
+                  xs={12}
+                  lg={7}
+                  className="rightImage"
+                  sx={{
+                    display: { xs: "none", lg: "block" },
+                    position: "fixed",
+                    top: 0,
+                    right: 0,
+                    height: "100vh",
+                  }}
+                >
+                  <Box
+                    sx={{
+                      position: "absolute",
+                      top: 10,
+                      left: 40,
+                      display: "flex",
+                      gap: "30px",
+                      px: 2,
+                      width: "100%",
+                    }}
+                  >
                     <IconButton
                       size="small"
+                      disableRipple
                       edge="start"
                       color="inherit"
                       aria-label="menu"
+                      className="bg-white"
                       sx={{ borderRadius: "100%", bgcolor: "white", p: 1.2 }}
                     >
                       <MenuIcon />
                     </IconButton>
                     <IconButton
+                      onClick={() => router.push("/cart")}
                       size="small"
+                      disableRipple
                       edge="start"
                       color="inherit"
+                      className="bg-white"
                       aria-label="menu"
                       sx={{ borderRadius: "100%", bgcolor: "white", p: 1.2 }}
                     >
                       <LocalMallOutlinedIcon />
                     </IconButton>
                     <IconButton
+                      onClick={() => router.push("/search")}
                       size="small"
                       edge="start"
                       color="inherit"
+                      className="bg-white"
                       aria-label="menu"
+                      disableRipple
                       sx={{ borderRadius: "100%", bgcolor: "white", p: 1.2 }}
                     >
                       <SearchOutlinedIcon />
@@ -115,15 +177,20 @@ function MyApp({ Component, pageProps }) {
                       edge="start"
                       color="inherit"
                       aria-label="menu"
-                      sx={{ borderRadius: "100%", bgcolor: "white", p: 1.2 }}
+                      className="bg-white"
+                      disableRipple
+                      sx={{
+                        borderRadius: "100%",
+
+                        bgcolor: "white",
+                        p: 1.2,
+                      }}
                     >
                       <LanguageOutlinedIcon />
                     </IconButton>
-
                   </Box>
                 </Grid>
               </Grid>
-
 
               <ScrollToTop />
             </Paper>
@@ -131,7 +198,7 @@ function MyApp({ Component, pageProps }) {
         </IframeHOC>
       </Provider>
     </>
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;
