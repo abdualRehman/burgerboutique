@@ -142,6 +142,7 @@ export default function Home() {
               Choose Location
             </Typography>
             <Typography
+              onClick={() => router.push("/select/branch")}
               variant="body2"
               fontSize={"12px"}
               width={"20px"}
@@ -166,7 +167,7 @@ export default function Home() {
           <Box flex={1} display={"flex"} alignItems={"center"} gap={3.5}>
             <AccessTimeOutlinedIcon style={{ color: "#adadad" }} />
             <Typography variant="body2" color="#adadad">
-              Earliest Arival
+              Earliest Arrival
             </Typography>
           </Box>
           <Box
