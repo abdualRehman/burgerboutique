@@ -10,7 +10,7 @@ import ArrowBackOutlinedIcon from "@mui/icons-material/ArrowBackOutlined";
 import Image from "next/image";
 import AddIcon from "@mui/icons-material/Add";
 
-const combo = () => {
+const Combo = () => {
   const router = useRouter();
   const history = () => {
     Router.back();
@@ -91,4 +91,4 @@ const combo = () => {
   );
 };
 
-export default combo;
+export default Combo;
