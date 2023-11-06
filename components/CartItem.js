@@ -13,6 +13,7 @@ const CartItem = () => {
             height={50}
             className="rounded-lg "
             src={"/images/p1.jpg"}
+            alt="cart-item-img"
           />
           <h6 className="text-red-600">remove</h6>
         </div>

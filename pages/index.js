@@ -29,6 +29,7 @@ export default function Home() {
       >
         <Box flex={1} display={"flex"} alignItems={"center"} gap={2}>
           <Image
+            alt="logo"
             src={logo}
             width={70}
             height={70}

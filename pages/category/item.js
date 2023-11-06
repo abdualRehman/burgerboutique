@@ -9,8 +9,13 @@ import { Box, Grid, Typography } from "@mui/material";
 import ArrowBackOutlinedIcon from "@mui/icons-material/ArrowBackOutlined";
 import Image from "next/image";
 import AddIcon from "@mui/icons-material/Add";
+
 const combo = () => {
   const router = useRouter();
+  const history = () => {
+    Router.back();
+  };
+
   const categories = [
     {
       img: p1,
@@ -28,7 +33,7 @@ const combo = () => {
   return (
     <div>
       <nav className="flex border-b border-gray-200 p-5">
-        <div className="cursor-pointer" onClick={() => Router.back()}>
+        <div className="cursor-pointer" onClick={history}>
           <ArrowBackOutlinedIcon />
         </div>
         <h2 className="flex w-full  items-center font-semibold justify-center">
