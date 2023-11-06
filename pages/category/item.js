@@ -78,7 +78,10 @@ const Combo = () => {
                   Four bb burgers, two fresh fries, boneless buffalo chicken
                   with ranch, four soft drinks
                 </Typography>
-                <div className="w-full duration-300 rounded-md hover:bg-slate-200 flex items-center font-semibold py-[2px] justify-center gap-2 border border-black">
+                <div
+                  onClick={() => router.push("/product/combo-meal/item")}
+                  className="w-full cursor-pointer duration-300 rounded-md hover:bg-slate-200 flex items-center font-semibold py-[2px] justify-center gap-2 border border-black"
+                >
                   <AddIcon />
                   Add
                 </div>

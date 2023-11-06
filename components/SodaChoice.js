@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Soda from "./Soda";
 import SpecialRequests from "./SpecialRequests";
 
 const SodaChoice = () => {
   const sodas = ["Coke", "Coke Zero", "Sprite"];
+  const [activeSoda, setActiveSoda] = useState([]);
+
   return (
     <div>
       <h3 className="ml-2 mt-6 font-semibold mb-2">Choice of soda</h3>
@@ -16,7 +18,12 @@ const SodaChoice = () => {
         </div>
         <div className="flex flex-col gap-6">
           {sodas.map((soda) => (
-            <Soda key={soda} name={soda} />
+            <Soda
+              setActiveSoda={setActiveSoda}
+              activeSoda={activeSoda}
+              key={soda}
+              name={soda}
+            />
           ))}
         </div>
       </div>

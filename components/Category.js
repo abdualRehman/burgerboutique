@@ -61,7 +61,7 @@ const Category = () => {
   const router = useRouter();
 
   return (
-    <Box m="auto">
+    <Box px={2} sx={{ backgroundColor: "#f4f5f5" }} m="auto">
       <Grid container spacing={2}>
         {categories.map((item, i) => {
           return (
