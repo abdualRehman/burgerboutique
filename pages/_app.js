@@ -138,6 +138,7 @@ function MyApp({ Component, pageProps }) {
                     }}
                   >
                     <IconButton
+                      onClick={() => router.push("/profile")}
                       size="small"
                       disableRipple
                       edge="start"
