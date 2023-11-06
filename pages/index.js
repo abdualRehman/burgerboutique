@@ -13,19 +13,24 @@ import MoneyOffCsredIcon from "@mui/icons-material/MoneyOffCsred";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import TwoWheelerOutlinedIcon from "@mui/icons-material/TwoWheelerOutlined";
 import AccessTimeOutlinedIcon from "@mui/icons-material/AccessTimeOutlined";
-
+import { useRouter } from "next/router";
 export default function Home() {
+  const router = useRouter();
   return (
-    <Box
-      px={2}
-      sx={{ position: "relative", flexDirection: "column", gap: "1px" }}
-    >
+    <Box sx={{ position: "relative", flexDirection: "column", gap: "1px" }}>
       {/* section 1 */}
       <Box
+        px={2}
         display={"flex"}
         alignItems={"center"}
         py={2}
-        sx={{ borderBottom: "2px solid #dee2e6" }}
+        sx={{
+          borderBottom: "2px solid #dee2e6",
+          animationDelay: 300,
+          ":hover": {
+            backgroundColor: "#f4f5f5",
+          },
+        }}
       >
         <Box flex={1} display={"flex"} alignItems={"center"} gap={2}>
           <Image
@@ -55,7 +60,9 @@ export default function Home() {
           justifyContent={"center"}
           height={"50px"}
         >
-          <InfoOutlinedIcon style={{ fontSize: "24px" }} />
+          <div onClick={() => router.push("/contact")}>
+            <InfoOutlinedIcon style={{ fontSize: "24px", cursor: "pointer" }} />
+          </div>
         </Box>
       </Box>
       {/* section 2 */}
@@ -67,6 +74,7 @@ export default function Home() {
         sx={{ borderBottom: "2px solid #dee2e6" }}
       >
         <Button
+          onClick={() => router.push("/select/branch")}
           variant="outlined"
           sx={{
             "&:hover": {
@@ -81,6 +89,7 @@ export default function Home() {
           Delivery
         </Button>
         <Button
+          onClick={() => router.push("/select/branch")}
           variant="outlined"
           sx={{
             "&:hover": {
@@ -99,6 +108,7 @@ export default function Home() {
       <Box
         sx={{ borderBottom: "2px solid #dee2e6" }}
         py={3}
+        px={3}
         display={"flex"}
         flexDirection={"column"}
         gap={2}
@@ -188,7 +198,7 @@ export default function Home() {
         display={"flex"}
         alignItems={"center"}
         py={2}
-        sx={{ borderBottom: "2px solid #dee2e6" }}
+        sx={{ borderBottom: "2px solid #dee2e6", backgroundColor: "#f4f5f5" }}
         mb={5}
       >
         <Category />
