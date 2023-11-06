@@ -3,20 +3,26 @@ import Link from "next/link";
 
 // mui
 import { Box, Button, Typography, useMediaQuery } from "@mui/material";
+import ArrowBackOutlinedIcon from "@mui/icons-material/ArrowBackOutlined";
 
 // redux
 import { useDispatch, useSelector } from "react-redux";
 
 // component
+
 import CartProducts from "../components/CartProducts";
 import CartField from "../components/CartField";
 import CartItem from "../components/CartItem";
+import Router from "next/router";
 
 const Cart = () => {
   const isTablet = useMediaQuery("(max-width:900px)");
 
   const state = useSelector((state) => state);
   const dispatch = useDispatch();
+  const history = () => {
+    Router.back();
+  };
 
   const [hasWindow, setHasWindow] = useState(false);
 
@@ -37,6 +43,14 @@ const Cart = () => {
 
   return (
     <div className="bg-[#f4f5f5] min-h-screen ">
+      <nav className="flex border-b border-gray-200 p-5">
+        <div className="cursor-pointer" onClick={history}>
+          <ArrowBackOutlinedIcon />
+        </div>
+        <h2 className="flex w-full  items-center font-semibold justify-center">
+          Shopping Cart
+        </h2>
+      </nav>
       <div className="flex gap-8 flex-col">
         <CartField
           promotion
