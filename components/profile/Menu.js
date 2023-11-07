@@ -6,9 +6,9 @@ import MenuItem from "../../components/profile/MenuItem";
 
 const Menu = () => {
   const menuItems = [
-    { name: "My Cart", logo: ShoppingCartIcon },
-    { name: "Menu", logo: AutoStoriesIcon },
-    { name: "My Orders", logo: RestoreIcon },
+    { name: "My Cart", logo: ShoppingCartIcon, link: "/cart" },
+    { name: "Menu", logo: AutoStoriesIcon, link: "/" },
+    { name: "My Orders", logo: RestoreIcon, link: "/" },
   ];
   return (
     <div>
@@ -16,6 +16,7 @@ const Menu = () => {
       <div>
         {menuItems.map((menuItem) => (
           <MenuItem
+            link={menuItem.link}
             key={menuItem.name}
             name={menuItem.name}
             Logo={menuItem.logo}

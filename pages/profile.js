@@ -12,7 +12,7 @@ const profile = () => {
 
   return (
     <div className="">
-      <nav className="flex  border-b bg-white border-gray-200 p-5">
+      <nav className="flex border-b max-md:px-8 bg-white border-gray-200 p-3">
         <div className="cursor-pointer" onClick={history}>
           <ArrowBackOutlinedIcon />
         </div>

@@ -6,7 +6,7 @@ import Location from "../../components/select-branch/Location";
 
 import PickupStore from "../../components/select-branch/PickupStore";
 const Branch = () => {
-  const [active, setActive] = useState("");
+  const [active, setActive] = useState(1);
   const history = () => {
     Router.back();
   };

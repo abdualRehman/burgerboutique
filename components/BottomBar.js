@@ -1,7 +1,9 @@
 import { Box, Button } from "@mui/material";
+import { useRouter } from "next/router";
 import React from "react";
 
 const BottomBar = ({ addToCart, category }) => {
+  const router = useRouter();
   return addToCart ? (
     <Box
       sx={{
@@ -82,6 +84,7 @@ const BottomBar = ({ addToCart, category }) => {
       }}
     >
       <Button
+        onClick={() => router.push("/select/branch")}
         className="bg-black font-extralight"
         variant="contained"
         sx={{

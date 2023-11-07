@@ -5,7 +5,7 @@ import ItemQuantity from "./ItemQuantity";
 const ItemDetail = () => {
   return (
     <div className="bg-white">
-      <div className="w-full flex relative h-[50vh] items-center justify-center">
+      <div className="w-full flex bg-cover relative  max-sm:h-[30vh] sm:h-[50vh] items-center justify-center">
         <Image
           src={"/images/p1.jpg"}
           className="absolute bg-cover"
