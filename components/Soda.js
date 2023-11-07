@@ -5,9 +5,7 @@ const Soda = ({ setActiveSoda, activeSoda, name }) => {
   const item = activeSoda.find((item) => item === name);
   return (
     <div
-      className={`flex mx-2  items-center pt-4 pr-4 rounded-md ${
-        item === name ? "border-2 border-black" : ""
-      }  justify-between`}
+      className={`flex mx-2  items-center pt-4 pr-4 rounded-md ${item === name ? 'border-2 border-black' : ''}  justify-between`}
     >
       <div className={`form-group  w-full  flex items-center`}>
         <input

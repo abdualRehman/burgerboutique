@@ -85,6 +85,7 @@ export default function Home() {
             sx={{
               "&:hover": {
                 bgcolor: "white",
+                border:"1px solid #666666"
               },
               fontWeight: 400,
               borderColor: "#666666",
@@ -100,6 +101,7 @@ export default function Home() {
             sx={{
               "&:hover": {
                 bgcolor: "white",
+                border:"1px solid #666666"
               },
               fontWeight: 400,
               borderColor: "#666666",
