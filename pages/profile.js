@@ -11,13 +11,8 @@ const profile = () => {
   };
 
   return (
-<<<<<<< HEAD
-    <div className="h-100" style={{height:'100vh'}} >
-      <nav className="flex border-b bg-white border-gray-200 p-5">
-=======
     <div className="">
       <nav className="flex border-b max-md:px-8 bg-white border-gray-200 p-3">
->>>>>>> 66d2f489ba27d95c634464a67ce5feb88624e34f
         <div className="cursor-pointer" onClick={history}>
           <ArrowBackOutlinedIcon />
         </div>

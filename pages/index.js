@@ -27,54 +27,12 @@ export default function Home() {
           px={2}
           display={"flex"}
           alignItems={"center"}
-<<<<<<< HEAD
-          justifyContent={"center"}
-          height={"50px"}
-        >
-          <div onClick={() => router.push("/contact")}>
-            <InfoOutlinedIcon style={{ fontSize: "24px", cursor: "pointer" }} />
-          </div>
-        </Box>
-      </Box>
-      {/* section 2 */}
-      <Box
-        display={"flex"}
-        justifyContent={"space-around"}
-        alignItems={"center"}
-        py={2}
-        sx={{ borderBottom: "2px solid #dee2e6" }}
-      >
-        <Button
-          onClick={() => router.push("/select/branch")}
-          variant="outlined"
-          sx={{
-            fontWeight: 400,
-            borderColor: "#666666",
-            color: "#666666",
-            mx: 4,
-            "&:hover": {
-              bgcolor: "white",
-              borderColor: "#666666",
-            },
-          }}
-        >
-          Delivery
-        </Button>
-        <Button
-          onClick={() => router.push("/select/branch")}
-          variant="outlined"
-          sx={{
-            "&:hover": {
-              bgcolor: "white",
-              borderColor: "#666666",
-=======
           py={2}
           sx={{
             borderBottom: "2px solid #dee2e6",
             animationDelay: 300,
             ":hover": {
               backgroundColor: "#f4f5f5",
->>>>>>> 66d2f489ba27d95c634464a67ce5feb88624e34f
             },
           }}
         >

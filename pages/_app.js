@@ -80,39 +80,6 @@ function MyApp({ Component, pageProps }) {
                     }}
                   >
                     <Component {...pageProps} />
-<<<<<<< HEAD
-                    <Box
-                      sx={{
-                        position: "sticky",
-                        bottom: 0,
-                        width: "100%",
-                        paddingY: "7px",
-                        paddingLeft: "10px",
-                        paddingRight: "10px",
-                        backgroundColor: "white",
-                        // top:"100%"
-                      }}
-                    >
-                      <Button
-                        className="bg-black font-extralight"
-                        variant="contained"
-                        sx={{
-                          "&:hover": {
-                            bgcolor: "black",
-                          },
-                          fontWeight: 100,
-                          width: "100%",
-                          py: 1,
-                          fontWeight: 400,
-                          backgroundColor: "black",
-                          color: "white",
-                        }}
-                      >
-                        Select Your Location
-                      </Button>
-                    </Box>
-=======
->>>>>>> 66d2f489ba27d95c634464a67ce5feb88624e34f
                   </Paper>
                 </Grid>
                 <Grid
