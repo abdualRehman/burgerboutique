@@ -25,7 +25,10 @@ const CartItem = () => {
             <h4 className="font-semibold">Caesars Salad</h4>
             <div className="mr-4 mt-6">
               {dummySodas.map((soda) => (
-                <div className="flex w-full text-sm  font-extralight text-[#acabab] justify-between">
+                <div
+                  key={soda.name}
+                  className="flex w-full text-sm  font-extralight text-[#acabab] justify-between"
+                >
                   <span className="">{soda.name}</span>
                   <span>x {soda.quantity}</span>
                 </div>
