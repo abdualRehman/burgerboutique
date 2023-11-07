@@ -43,7 +43,7 @@ const Cart = () => {
 
   return (
     <div className="bg-[#f4f5f5] min-h-screen ">
-      <nav className="flex border-b border-gray-200 p-5">
+      <nav className="flex border-b bg-white border-gray-200 p-5">
         <div className="cursor-pointer" onClick={history}>
           <ArrowBackOutlinedIcon />
         </div>
@@ -51,7 +51,7 @@ const Cart = () => {
           Shopping Cart
         </h2>
       </nav>
-      <div className="flex gap-8 flex-col">
+      <div className="flex mt-6 gap-8 flex-col">
         <CartField
           promotion
           placeholder={"Enter promotion code"}
@@ -64,7 +64,9 @@ const Cart = () => {
         />
       </div>
       <div>
-        <h2 className="ml-3 font-semibold mt-7 mb-2">Items</h2>
+        <h2 className="ml-3 font-semibold text-[#666666] text-sm mt-7 mb-2">
+          Items
+        </h2>
         <CartItem />
         <CartItem />
         <CartItem />

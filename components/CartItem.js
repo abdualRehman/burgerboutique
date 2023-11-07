@@ -4,8 +4,8 @@ import CartItemQuantity from "./CartItemQuantity";
 
 const CartItem = () => {
   return (
-    <div className="w-full p-3 bg-white ">
-      <h6 className="font-semibold mb-1">edit</h6>
+    <div className="w-full p-1 px-4 bg-white ">
+      <h6 className="font-semibold text-sm mb-1">edit</h6>
       <div className="flex items-start gap-3 ">
         <div className="bg-cover flex-col items-center">
           <Image
@@ -15,11 +15,11 @@ const CartItem = () => {
             src={"/images/p1.jpg"}
             alt="cart-item-img"
           />
-          <h6 className="text-red-600">remove</h6>
+          <h6 className="text-red-600 font-semibold text-sm -mt-2 ">remove</h6>
         </div>
         <div className="flex w-full justify-between">
           <span className="font-semibold">Corn Rib</span>
-          <span className="font-semibold">KD 2.250</span>
+          <span className="font-semibold text-sm text-black ">KD 2.250</span>
         </div>
       </div>
       <CartItemQuantity />

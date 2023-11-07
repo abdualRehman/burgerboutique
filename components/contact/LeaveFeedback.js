@@ -4,9 +4,9 @@ import { Button } from "@mui/material";
 
 const LeaveFeedback = () => {
   return (
-    <div className="w-full border flex items-center justify-center border-gray-300 bg-white p-4">
+    <div className="w-full border flex items-center justify-center border-gray-300 bg-white p-3">
       <Button className="flex gap-3 items-center text-black  justify-center">
-        <span className="text-sm font-extralight tracking-normal">
+        <span className="text-xs font-extralight  tracking-normal">
           LEAVE FEEDBACK
         </span>
         <ThumbUpIcon />

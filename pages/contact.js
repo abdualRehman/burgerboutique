@@ -14,9 +14,13 @@ const Contact = () => {
           <ArrowBackOutlinedIcon />
         </div>
       </nav>
-      <h3 className="p-2 mt-4 font-semibold">Our Branches</h3>
+      <h3 className="p-2 mt-4 text-[#666666] text-sm font-semibold">
+        Our Branches
+      </h3>
       <OurBranches />
-      <h3 className="p-2 mt-4 font-semibold">Your opinion matters</h3>
+      <h3 className="p-2 mt-4 text-[#666666] text-sm font-semibold">
+        Your opinion matters
+      </h3>
       <LeaveFeedback />
     </div>
   );
