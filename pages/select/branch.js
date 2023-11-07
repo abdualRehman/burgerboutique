@@ -5,7 +5,7 @@ import MethodCards from "../../components/select-branch/MethodCards";
 import Location from "../../components/select-branch/Location";
 
 import PickupStore from "../../components/select-branch/PickupStore";
-const branch = () => {
+const Branch = () => {
   const [active, setActive] = useState("");
   const history = () => {
     Router.back();
@@ -23,4 +23,4 @@ const branch = () => {
   );
 };
 
-export default branch;
+export default Branch;
