@@ -44,6 +44,7 @@ const Navbar = () => {
             borderRadius: "0",
             border: "none",
             display: "flex",
+            justifyContent: "space-between",
             alignItems: "center",
             px: 2,
           }}
@@ -59,7 +60,7 @@ const Navbar = () => {
                 px: 2,
               }}
             >
-              <Box sx={{ width: "100%" }}>
+              <Box>
                 <IconButton
                   size="large"
                   edge="start"
@@ -73,9 +74,10 @@ const Navbar = () => {
 
               <Box
                 sx={{
-                  width: "100%",
                   display: "flex",
                   alignItems: "center",
+                  marginLeft: 4,
+
                   justifyContent: state.config?.navLogoPosition || "center",
                 }}
               >
@@ -90,7 +92,6 @@ const Navbar = () => {
 
               <Box
                 sx={{
-                  width: "30%",
                   display: "flex",
                   alignItems: "flex-end",
                   justifyContent: "flex-end",
@@ -101,6 +102,7 @@ const Navbar = () => {
                   size="small"
                   edge="start"
                   color="inherit"
+                  onClick={() => router.push("/cart")}
                   aria-label="menu"
                 >
                   <LocalMallOutlinedIcon style={{ fontSize: "24px" }} />
@@ -110,6 +112,7 @@ const Navbar = () => {
                   edge="start"
                   color="inherit"
                   aria-label="menu"
+                  onClick={() => router.push("/search")}
                 >
                   <SearchOutlinedIcon style={{ fontSize: "24px" }} />
                 </IconButton>
@@ -117,6 +120,7 @@ const Navbar = () => {
                   size="small"
                   edge="start"
                   color="inherit"
+                  onClick={() => router.push("/")}
                   aria-label="menu"
                 >
                   <LanguageOutlinedIcon style={{ fontSize: "24px" }} />
