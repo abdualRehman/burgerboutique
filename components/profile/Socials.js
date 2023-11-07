@@ -18,7 +18,7 @@ const Socials = () => {
     },
   ];
   return (
-    <div className="min-h-screen">
+    <div className="">
       <div className="p-3 text-[#666666] mt-6 font-semibold">Sign in with</div>
       <div className="">
         {socials.map((social) => (

@@ -10,10 +10,10 @@ import { useDispatch, useSelector } from "react-redux";
 
 // component
 
-import CartProducts from "../components/CartProducts";
 import CartField from "../components/CartField";
 import CartItem from "../components/CartItem";
 import Router from "next/router";
+import BottomBar from "../components/BottomBar";
 
 const Cart = () => {
   const isTablet = useMediaQuery("(max-width:900px)");
@@ -71,6 +71,7 @@ const Cart = () => {
         <CartItem />
         <CartItem />
       </div>
+      <BottomBar />
     </div>
   );
 };

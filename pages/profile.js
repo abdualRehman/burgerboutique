@@ -3,6 +3,7 @@ import Router from "next/router";
 import ArrowBackOutlinedIcon from "@mui/icons-material/ArrowBackOutlined";
 import Menu from "../components/profile/Menu";
 import Socials from "../components/profile/Socials";
+import BottomBar from "../components/BottomBar";
 
 const profile = () => {
   const history = () => {
@@ -10,14 +11,17 @@ const profile = () => {
   };
 
   return (
-    <div>
-      <nav className="flex border-b bg-white border-gray-200 p-5">
+    <div className="">
+      <nav className="flex  border-b bg-white border-gray-200 p-5">
         <div className="cursor-pointer" onClick={history}>
           <ArrowBackOutlinedIcon />
         </div>
       </nav>
-      <Menu />
-      <Socials />
+      <div className="min-h-screen">
+        <Menu />
+        <Socials />
+      </div>
+      <BottomBar />
     </div>
   );
 };
