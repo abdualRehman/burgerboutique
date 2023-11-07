@@ -5,8 +5,13 @@ import ItemQuantity from "./ItemQuantity";
 const ItemDetail = () => {
   return (
     <div className="bg-white">
-      <div className="w-full flex items-center justify-center">
-        <Image src={"/images/p1.jpg"} alt="men" width="380px" height="270px" />
+      <div className="w-full flex relative h-[50vh] items-center justify-center">
+        <Image
+          src={"/images/p1.jpg"}
+          className="absolute bg-cover"
+          alt="men"
+          layout="fill"
+        />
       </div>
       <h3 className="p-2 font-semibold text-gray-600">
         BB Collection For 4 Persons
