@@ -9,7 +9,11 @@ import { Box, Grid, Typography } from "@mui/material";
 import ArrowBackOutlinedIcon from "@mui/icons-material/ArrowBackOutlined";
 import Image from "next/image";
 import AddIcon from "@mui/icons-material/Add";
+<<<<<<< HEAD
 
+=======
+import BottomBar from "../../components/BottomBar";
+>>>>>>> 66d2f489ba27d95c634464a67ce5feb88624e34f
 const Combo = () => {
   const router = useRouter();
   const history = () => {
@@ -90,6 +94,7 @@ const Combo = () => {
           })}
         </Grid>
       </Box>
+      <BottomBar category={true} />
     </div>
   );
 };

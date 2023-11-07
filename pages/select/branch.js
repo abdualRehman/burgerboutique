@@ -5,9 +5,14 @@ import MethodCards from "../../components/select-branch/MethodCards";
 import Location from "../../components/select-branch/Location";
 
 import PickupStore from "../../components/select-branch/PickupStore";
+<<<<<<< HEAD
 const branch = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [active, setActive] = useState(2);
+=======
+const Branch = () => {
+  const [active, setActive] = useState(1);
+>>>>>>> 66d2f489ba27d95c634464a67ce5feb88624e34f
   const history = () => {
     Router.back();
   };
@@ -24,4 +29,4 @@ const branch = () => {
   );
 };
 
-export default branch;
+export default Branch;

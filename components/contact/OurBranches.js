@@ -1,11 +1,16 @@
 import React from "react";
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
+import { useRouter } from "next/router";
 const OurBranches = () => {
+  const router = useRouter();
   return (
     <div>
-      <div className="w-full flex py-3 border-y  border-gray-300 pb-7 items-center bg-white">
-        <div className="flex w-full px-3 items-center hover:bg-[#f4f5f5]  ">
-          <p className="border-b w-full p-3 text-gray-500 border-gray-300">
+      <div className="w-full flex py-3 border-y  border-gray-200 pb-6 items-center bg-white">
+        <div
+          onClick={() => router.push("/branch/1734")}
+          className="flex cursor-pointer w-full px-3 items-center duration-200 hover:bg-[#f4f5f5]  "
+        >
+          <p className="border-b w-full p-3 text-base font-extralight text-gray-500 border-gray-200">
             Burger Boutique
           </p>
           <HelpOutlineOutlinedIcon

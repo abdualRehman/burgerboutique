@@ -1,32 +1,32 @@
 import React from "react";
 import Router from "next/router";
 import ArrowBackOutlinedIcon from "@mui/icons-material/ArrowBackOutlined";
+import Menu from "../components/profile/Menu";
+import Socials from "../components/profile/Socials";
+import BottomBar from "../components/BottomBar";
 
 const profile = () => {
   const history = () => {
     Router.back();
   };
-  const menuItems = ["My Cart", "Menu", "My Orders"];
+
   return (
+<<<<<<< HEAD
     <div className="h-100" style={{height:'100vh'}} >
       <nav className="flex border-b bg-white border-gray-200 p-5">
+=======
+    <div className="">
+      <nav className="flex border-b max-md:px-8 bg-white border-gray-200 p-3">
+>>>>>>> 66d2f489ba27d95c634464a67ce5feb88624e34f
         <div className="cursor-pointer" onClick={history}>
           <ArrowBackOutlinedIcon />
         </div>
       </nav>
-      <div>
-        <div className="p-3 font-semibold">Menu</div>
-        <div>
-          {menuItems.map((menuItem) => (
-            <div
-              className="p-2 font-semibold border-y border-gray-300"
-              key={menuItem}
-            >
-              {menuItem}
-            </div>
-          ))}
-        </div>
+      <div className="min-h-screen">
+        <Menu />
+        <Socials />
       </div>
+      <BottomBar />
     </div>
   );
 };

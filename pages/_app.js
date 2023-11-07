@@ -10,8 +10,7 @@ import { Box, Button, Grid, IconButton, Paper } from "@mui/material";
 import { ColorContextProvider } from "../theme/MUI_MODE";
 
 // components
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
+
 import ScrollToTop from "../components/ScrollToTop";
 import "../styles/globals.css";
 
@@ -80,8 +79,8 @@ function MyApp({ Component, pageProps }) {
                       },
                     }}
                   >
-                    <Navbar />
                     <Component {...pageProps} />
+<<<<<<< HEAD
                     <Box
                       sx={{
                         position: "sticky",
@@ -112,6 +111,8 @@ function MyApp({ Component, pageProps }) {
                         Select Your Location
                       </Button>
                     </Box>
+=======
+>>>>>>> 66d2f489ba27d95c634464a67ce5feb88624e34f
                   </Paper>
                 </Grid>
                 <Grid
