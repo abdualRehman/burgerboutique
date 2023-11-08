@@ -1,18 +1,19 @@
 import { Box, Button } from "@mui/material";
 import { useRouter } from "next/router";
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../slices/cartReducer";
 
 const BottomBar = ({ addToCartBtn, category, product, qty }) => {
   const router = useRouter();
+  const state = useSelector((state) => state.cartList);
   const dispatch = useDispatch();
   const handleAddToCart = () => {
     dispatch(addToCart({ ...product, quantity: qty }));
     router.push("/cart");
   }
 
-  
+
   return addToCartBtn ? (
     <Box
       sx={{
@@ -26,7 +27,6 @@ const BottomBar = ({ addToCartBtn, category, product, qty }) => {
       }}
     >
       <Button
-        // onClick={() => router.push("/cart")}
         onClick={handleAddToCart}
         className="bg-black font-extralight"
         variant="contained"
@@ -61,6 +61,7 @@ const BottomBar = ({ addToCartBtn, category, product, qty }) => {
       }}
     >
       <Button
+        onClick={() => router.push("/cart")}
         className="bg-black font-extralight"
         variant="contained"
         sx={{
@@ -76,9 +77,9 @@ const BottomBar = ({ addToCartBtn, category, product, qty }) => {
         }}
       >
         <div className="flex justify-between w-full">
-          <div className="text-right">1</div>
+          <div className="text-right">{state?.itemsCounter || 0}</div>
           <div className=" flex-[2.5] text-center ">Review Your Order</div>
-          <div className="text-right">300 KD</div>
+          <div className="text-right">{state?.total || 0} KD</div>
         </div>
       </Button>
     </Box>
