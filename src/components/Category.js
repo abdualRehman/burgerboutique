@@ -9,46 +9,50 @@ import jewelery from "../../public/jewelery.jpg";
 import { Box } from "@mui/system";
 import { Button, Grid, Typography, useMediaQuery } from "@mui/material";
 import { useRouter } from "next/router";
-import { products } from "../constants/dummySoda";
+import { useSelector } from "react-redux";
+// import { productsData } from "../constants/dummySoda";
 
 const Category = () => {
-  const isTablet = useMediaQuery("(max-width:900px)");
-  const router = useRouter();
+    const isTablet = useMediaQuery("(max-width:900px)");
+    const router = useRouter();
 
-  return (
-    <Box
-      px={2}
-      sx={{ backgroundColor: "#f4f5f5", paddingTop: "28px" }}
-      m="auto"
-    >
-      <Grid container spacing={2}>
-        {products.map((item, i) => {
-          return (
-            <Grid item xs={6} key={i}>
-              <Image
-                onClick={() => router.push("/category/item")}
-                style={{
-                  borderRadius: "7px",
-                  objectFit: "contain",
-                  cursor: "pointer",
-                }}
-                src={item.img}
-                alt="men"
-                width="380px"
-                height="270px"
-              />
-              <Typography
-                variant="body2"
-                sx={{ fontWeight: 700 }}
-                component="h2"
-              >
-                {item.title}
-              </Typography>
+    const { categories } = useSelector(state => state.products);
+
+    return (
+        <Box
+            px={2}
+            sx={{ backgroundColor: "#f4f5f5", paddingTop: "28px" }}
+            m="auto"
+        >
+            <Grid container spacing={2}>
+                {categories && categories.map((item, i) => {
+                    return (
+                        <Grid item xs={6} key={i}>
+                            <Image
+                                // onClick={() => router.push("/category/item")}
+                                onClick={() => router.push("/category/" + item.id)}
+                                style={{
+                                    borderRadius: "7px",
+                                    objectFit: "contain",
+                                    cursor: "pointer",
+                                }}
+                                src={item.img}
+                                alt="men"
+                                width="380px"
+                                height="270px"
+                            />
+                            <Typography
+                                variant="body2"
+                                sx={{ fontWeight: 700 }}
+                                component="h2"
+                            >
+                                {item.title}
+                            </Typography>
+                        </Grid>
+                    );
+                })}
             </Grid>
-          );
-        })}
-      </Grid>
-      {/* <Box display='flex' flexDirection='column' alignItems='center' justifyContent='center' gap='20px' mb='20px'>
+            {/* <Box display='flex' flexDirection='column' alignItems='center' justifyContent='center' gap='20px' mb='20px'>
                 <Box sx={{ position: 'relative' }}>
                     <Image src={men} alt='men' width='380px' height='500px' />
                     <Box sx={{
@@ -118,8 +122,8 @@ const Category = () => {
                     </Box>
                 </Box>
             </Box> */}
-    </Box>
-  );
+        </Box>
+    );
 };
 
 export default Category;

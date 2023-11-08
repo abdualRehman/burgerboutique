@@ -18,7 +18,9 @@ import BottomBar from "../components/BottomBar";
 const Cart = () => {
   const isTablet = useMediaQuery("(max-width:900px)");
 
-  const state = useSelector((state) => state);
+  const state = useSelector((state) => state.cartList);
+
+
   const dispatch = useDispatch();
   const history = () => {
     Router.back();
@@ -67,9 +69,9 @@ const Cart = () => {
         <h2 className="ml-3 font-semibold text-[#666666] text-sm mt-7 mb-2">
           Items
         </h2>
-        <CartItem />
-        <CartItem />
-        <CartItem />
+        {state?.selected && state.selected.map((item, i) => {
+          return <CartItem key={i} item={item} />
+        })}
       </div>
       <BottomBar />
     </div>

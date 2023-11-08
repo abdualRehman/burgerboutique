@@ -14,91 +14,100 @@ import p6 from "../../public/images/p6.jpg";
 import p7 from "../../public/images/p7.jpg";
 import p8 from "../../public/images/p8.jpg";
 
-export const products = [
+
+
+export const productsList = [
+  {
+    id: 1,
+    category: 1,
+    title: "BB Collection for 4 persons",
+    img: p1c1,
+    price: 200,
+  },
+  {
+    id: 2,
+    category: 1,
+    title: "BB Collection for 2 persons",
+    img: p1c2,
+    price: 100,
+  },
+  {
+    id: 3,
+    category: 1,
+    title: "BB Collection for 3 persons",
+    img: p1c3,
+    price: 50,
+  },
+  {
+    id: 4,
+    category: 1,
+    title: "BB Collection for 4 persons",
+    img: p1c4,
+    price: 220,
+  },
+  {
+    id: 5,
+    category: 2,
+    title: "Salads / Appetizers for 4 persons",
+    img: p2c1,
+    price: 60,
+  },
+  {
+    id: 6,
+    category: 2,
+    title: "Salads / Appetizers for 2 persons",
+    img: p1c2,
+    price: 800,
+  },
+  {
+    id: 7,
+    category: 2,
+    title: "Salads / Appetizers 3 persons",
+    img: p2c3,
+    price: 80,
+  },
+];
+
+export const categoriesList = [
   {
     id: 1,
     img: p1,
     title: "Combo Meal",
-    category: [
-      {
-        id: 1,
-        title: "BB Collection for 4 persons",
-        img: p1c1,
-      },
-      {
-        id: 2,
-        title: "BB Collection for 2 persons",
-        img: p1c2,
-      },
-      {
-        id: 3,
-        title: "BB Collection for 3 persons",
-        img: p1c3,
-      },
-      {
-        id: 4,
-        title: "BB Collection for 4 persons",
-        img: p1c4,
-      },
-    ],
   },
   {
     id: 2,
     img: p2,
     title: "SALADS / APPETIZERS",
-    category: [
-      {
-        id: 5,
-        title: "Salads / Appetizers for 4 persons",
-        img: p2c1,
-      },
-      {
-        id: 6,
-        title: "Salads / Appetizers for 2 persons",
-        img: p1c2,
-      },
-      {
-        id: 7,
-        title: "Salads / Appetizers 3 persons",
-        img: p2c3,
-      },
-    ],
   },
   {
     id: 3,
     img: p3,
     title: "BEEF BURGERS",
-    category: [],
   },
   {
     id: 4,
     img: p4,
     title: "CHICKEN BURGERS",
-    category: [],
   },
   {
     id: 5,
     img: p5,
     title: "SLIDERS",
-    category: [],
   },
   {
     id: 6,
     img: p6,
     title: "LEMONADES",
-    category: [],
   },
   {
     id: 7,
     img: p7,
     title: "SODAS & WATER",
-    category: [],
   },
   {
     id: 8,
     img: p8,
     title: "Extra Toppings",
-    category: [],
   },
 ];
 

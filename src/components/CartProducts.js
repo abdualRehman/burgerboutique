@@ -15,7 +15,8 @@ import { IsInCart, QuantityCount } from "../helpers/functions";
 
 const CartProducts = ({ product }) => {
 
-    const state = useSelector(state => state)
+    const state = useSelector(state => state.cart);
+
     const dispatch = useDispatch()
 
     const plusHandler = () => {

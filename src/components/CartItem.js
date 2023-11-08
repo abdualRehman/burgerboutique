@@ -2,8 +2,11 @@ import Image from "next/image";
 import React from "react";
 import CartItemQuantity from "./CartItemQuantity";
 import { dummySodas } from "../constants/dummySoda";
+import { useDispatch } from "react-redux";
+import { remove } from "../../slices/cartReducer";
 
-const CartItem = () => {
+const CartItem = ({ item }) => {
+  const dispatch = useDispatch();
   return (
     <div className="w-full p-1 px-4 bg-white ">
       <h6 className="font-semibold text-sm mb-1">edit</h6>
@@ -13,16 +16,16 @@ const CartItem = () => {
             <Image
               width={50}
               height={50}
-              className="rounded-lg "
-              src={"/images/p1.jpg"}
+              className="rounded-lg"
+              src={item.img}
               alt="cart-item-img"
             />
-            <h6 className="text-red-600 font-semibold text-sm -mt-2 ">
+            <h6 className="text-red-600 font-semibold text-sm -mt-2 cursor-pointer" onClick={() => dispatch(remove({ id: item.id }))} >
               remove
             </h6>
           </div>
           <div className="w-full">
-            <h4 className="font-semibold">Caesars Salad</h4>
+            <h4 className="font-semibold">{item.title}</h4>
             <div className="mr-4 mt-6">
               {dummySodas.map((soda) => (
                 <div
@@ -37,8 +40,10 @@ const CartItem = () => {
           </div>
         </div>
         <div className="flex items-end  justify-between flex-col">
-          <h3 className="text-sm font-bold ">KD 750</h3>
-          <CartItemQuantity />
+          <h3 className="text-sm font-bold ">KD {item.price * item.quantity}</h3>
+          {item && (
+            <CartItemQuantity item={item} />
+          )}
         </div>
       </div>
 

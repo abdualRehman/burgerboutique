@@ -1,10 +1,19 @@
 import { Box, Button } from "@mui/material";
 import { useRouter } from "next/router";
 import React from "react";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../slices/cartReducer";
 
-const BottomBar = ({ addToCart, category }) => {
+const BottomBar = ({ addToCartBtn, category, product, qty }) => {
   const router = useRouter();
-  return addToCart ? (
+  const dispatch = useDispatch();
+  const handleAddToCart = () => {
+    dispatch(addToCart({ ...product, quantity: qty }));
+    router.push("/cart");
+  }
+
+  
+  return addToCartBtn ? (
     <Box
       sx={{
         position: "sticky",
@@ -17,6 +26,8 @@ const BottomBar = ({ addToCart, category }) => {
       }}
     >
       <Button
+        // onClick={() => router.push("/cart")}
+        onClick={handleAddToCart}
         className="bg-black font-extralight"
         variant="contained"
         sx={{
@@ -33,7 +44,7 @@ const BottomBar = ({ addToCart, category }) => {
       >
         <div className="flex justify-between w-full">
           <div className=" flex-[2.5] text-center ">Add To Cart</div>
-          <div className="text-right">300 KD</div>
+          <div className="text-right">{product.price * qty} KD</div>
         </div>
       </Button>
     </Box>

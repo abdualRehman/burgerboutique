@@ -16,7 +16,22 @@ import AccessTimeOutlinedIcon from "@mui/icons-material/AccessTimeOutlined";
 import { useRouter } from "next/router";
 import Navbar from "../components/Navbar";
 import BottomBar from "../components/BottomBar";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { fetchData } from "../../slices/productReducer";
 export default function Home() {
+
+  const dispath = useDispatch();
+  const globalState = useSelector((state) => state);
+
+  useEffect(() => {
+    if (!globalState?.products?.list) {
+      dispath(fetchData());
+    }
+  }, [globalState.products?.list])
+
+
+
   const router = useRouter();
   return (
     <>
@@ -85,7 +100,7 @@ export default function Home() {
             sx={{
               "&:hover": {
                 bgcolor: "white",
-                border:"1px solid #666666"
+                border: "1px solid #666666"
               },
               fontWeight: 400,
               borderColor: "#666666",
@@ -101,7 +116,7 @@ export default function Home() {
             sx={{
               "&:hover": {
                 bgcolor: "white",
-                border:"1px solid #666666"
+                border: "1px solid #666666"
               },
               fontWeight: 400,
               borderColor: "#666666",
