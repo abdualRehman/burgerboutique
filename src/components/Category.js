@@ -5,56 +5,11 @@ import men from "../../public/men.jpg";
 import women from "../../public/women.jpg";
 import electronics from "../../public/electronics.jpg";
 import jewelery from "../../public/jewelery.jpg";
-
 // mui
 import { Box } from "@mui/system";
 import { Button, Grid, Typography, useMediaQuery } from "@mui/material";
-import Link from "next/link";
-
-import p1 from "../../public/images/p1.jpg";
-import p2 from "../../public/images/p2.jpg";
-import p3 from "../../public/images/p3.jpg";
-import p4 from "../../public/images/p4.jpg";
-import p5 from "../../public/images/p5.jpg";
-import p6 from "../../public/images/p6.jpg";
-import p7 from "../../public/images/p7.jpg";
-import p8 from "../../public/images/p8.jpg";
 import { useRouter } from "next/router";
-
-const categories = [
-  {
-    img: p1,
-    title: "Combo Meal",
-  },
-  {
-    img: p2,
-    title: "SALADS / APPETIZERS",
-  },
-  {
-    img: p3,
-    title: "BEEF BURGERS",
-  },
-  {
-    img: p4,
-    title: "CHICKEN BURGERS",
-  },
-  {
-    img: p5,
-    title: "SLIDERS",
-  },
-  {
-    img: p6,
-    title: "LEMONADES",
-  },
-  {
-    img: p7,
-    title: "SODAS & WATER",
-  },
-  {
-    img: p8,
-    title: "Extra Toppings",
-  },
-];
+import { products } from "../constants/dummySoda";
 
 const Category = () => {
   const isTablet = useMediaQuery("(max-width:900px)");
@@ -67,7 +22,7 @@ const Category = () => {
       m="auto"
     >
       <Grid container spacing={2}>
-        {categories.map((item, i) => {
+        {products.map((item, i) => {
           return (
             <Grid item xs={6} key={i}>
               <Image
