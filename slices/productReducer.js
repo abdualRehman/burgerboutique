@@ -1,5 +1,5 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { categoriesList, productsList } from "../src/constants/dummySoda";
+import { createSlice } from "@reduxjs/toolkit";
+import fetchData from "../actions/Products";
 
 
 let initialState = {
@@ -8,16 +8,6 @@ let initialState = {
   loading: false,
   error: null,
 };
-
-// Create an async thunk to fetch data from an API
-const fetchData = createAsyncThunk('products/fetchData', async () => {
-  try {
-    const data = { categoriesList, productsList };
-    return data;
-  } catch (error) {
-    throw error;
-  }
-})
 
 
 
