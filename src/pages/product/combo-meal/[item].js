@@ -7,7 +7,7 @@ import Router, { useRouter } from "next/router";
 import BottomBar from "../../../components/BottomBar";
 import Share from "../../../components/product-page/Share";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchData } from "../../../../slices/productReducer";
+import { fetchData } from "../../../../RTK/slices/productReducer";
 
 const Item = () => {
 

@@ -18,7 +18,7 @@ import Navbar from "../components/Navbar";
 import BottomBar from "../components/BottomBar";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { fetchData } from "../../slices/productReducer";
+import { fetchData } from "../../RTK/slices/productReducer";
 export default function Home() {
 
   const dispath = useDispatch();

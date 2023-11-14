@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { minus, plus } from "../../slices/cartReducer";
+import { minus, plus } from "../../RTK/slices/cartReducer";
 
 const CartItemQuantity = ({ item }) => {
   const dispatch = useDispatch();

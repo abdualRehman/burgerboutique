@@ -2,7 +2,7 @@ import { Box, Button } from "@mui/material";
 import { useRouter } from "next/router";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "../../slices/cartReducer";
+import { addToCart } from "../../RTK/slices/cartReducer";
 
 const BottomBar = ({ addToCartBtn, category, product, qty }) => {
   const router = useRouter();

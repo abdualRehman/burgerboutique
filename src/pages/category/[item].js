@@ -11,7 +11,7 @@ import Image from "next/image";
 import AddIcon from "@mui/icons-material/Add";
 import BottomBar from "../../components/BottomBar";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchData } from "../../../slices/productReducer";
+import { fetchData } from "../../../RTK/slices/productReducer";
 const Combo = () => {
 
   const [product, setProduct] = useState([]);

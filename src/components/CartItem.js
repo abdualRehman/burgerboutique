@@ -3,7 +3,7 @@ import React from "react";
 import CartItemQuantity from "./CartItemQuantity";
 import { dummySodas } from "../constants/dummySoda";
 import { useDispatch } from "react-redux";
-import { remove } from "../../slices/cartReducer";
+import { remove } from "../../RTK/slices/cartReducer";
 
 const CartItem = ({ item }) => {
   const dispatch = useDispatch();

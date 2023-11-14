@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { categoriesList, productsList } from "../src/constants/dummySoda";
+import { categoriesList, productsList } from "../../src/constants/dummySoda";
 // Create an async thunk to fetch data from an API
 const fetchData = createAsyncThunk('products/fetchData', async () => {
     try {
